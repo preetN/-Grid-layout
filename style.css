@@ -1,0 +1,104 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+.wrapper {
+  display: grid;
+  gap: 0.7rem;
+  grid-template-areas:
+    "h1 h1 h1"
+    "header header header"
+    "banner banner sb1"
+    "banner banner sb2"
+    "sm main main"
+    "tags main main"
+    "recent main main"
+    "footer footer footer";
+}
+h1 {
+  grid-area: h1;
+  background-color: blue;
+}
+header {
+  grid-area: header;
+  background-color: blueviolet;
+}
+.banner {
+  grid-area: banner;
+  background: linear-gradient(blue, pink);
+  min-height: 200px;
+}
+.side-box1 {
+  grid-area: sb1;
+  background-color: goldenrod;
+}
+.side-box2 {
+  grid-area: sb2;
+  background-color: lightseagreen;
+}
+.side-menu {
+  grid-area: sm;
+  background-color: palevioletred;
+}
+.tags {
+  grid-area: tags;
+  background: grey;
+}
+.recent {
+  grid-area: recent;
+  background-color: forestgreen;
+}
+.main {
+  grid-area: main;
+  min-height: 200px;
+  background: radial-gradient(fuchsia, purple, yellow, green);
+}
+.footer {
+  grid-area: footer;
+  color: white;
+  background-color: black;
+}
+.wrapper > * {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+@media (768px < width < 992px) {
+  .wrapper {
+    display: grid;
+    gap: 0.7rem;
+    grid-template-areas:
+      "h1 h1"
+      "header header"
+      "banner banner"
+      "banner banner"
+      "banner banner"
+      "sb1 sb2"
+      "sm sm"
+      " main main"
+      " main main"
+      "tags recent"
+      "footer footer";
+  }
+}
+@media (max-width: 768px) {
+  .wrapper {
+    display: grid;
+    gap: 0.7rem;
+    grid-template-areas:
+      "h1 "
+      "header "
+      "banner "
+      "sb1"
+      "sb2"
+      "sm"
+      " main"
+      " main"
+      "tags "
+      "recent"
+      "footer";
+  }
+}
